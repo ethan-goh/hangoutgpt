@@ -1,7 +1,7 @@
 "use client";
 
 import maplibregl, { Map as MLMap, GeoJSONSource, LngLatBoundsLike } from "maplibre-gl";
-import { featureCollectionBounds } from "@/lib/geo";
+import { featureCollectionBounds } from "@/lib/helpers";
 import { onNomSearch } from "@/lib/events";
 import { useEffect, useRef } from "react";
 
