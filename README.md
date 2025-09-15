@@ -2,7 +2,6 @@
 
 A location-aware chatbot that helps you discover hangout spots and venues on an interactive map. Simply ask for recommendations and watch as places appear on the map in real-time.
 
-![HangoutGPT Interface](https://via.placeholder.com/800x400?text=HangoutGPT+Interface)
 
 ## Features
 
