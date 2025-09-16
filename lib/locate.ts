@@ -133,7 +133,7 @@ function rankByTokens(rows: any[], topic: string): any[] {
 }
 
 const NOMINATIM_URL = "https://nominatim.openstreetmap.org/search";
-const UA = process.env.NOMINATIM_USER_AGENT || "hangoutgpt (your-email@example.com)";
+const UA = process.env.NOMINATIM_USER_AGENT || "hangoutgpt";
 
 type NominatimParams = {
   q: string;
