@@ -26,7 +26,7 @@ const places_search = tool({
    - If cuisine/genre, include the noun: "ramen" → "ramen restaurants, japanese restaurants".
    - Some sample mappings: "date night" → "restaurants, bars, waterfronts"; "hangout" → "cafes, parks, malls"; "movie" → "cinemas".
 `),
-    area: z.string().default("Singapore"),
+    area: z.string().describe("Region or district in Singapore, e.g. east, west, north, south, central"),
     limit: z.number().int().min(1).max(10).default(5),
     viewbox: z
       .object({ left: z.number(), top: z.number(), right: z.number(), bottom: z.number() })
@@ -38,7 +38,7 @@ const places_search = tool({
   }),
   async execute({ topic, area, limit, viewbox, placeType, }) {
     const desired = limit ?? 5;
-
+    
     const baseVB: VB = viewbox ?? sgViewbox();
 
     const side = detectSide(`${topic} ${area}`);
@@ -65,7 +65,6 @@ const places_search = tool({
 
 export async function POST(req: Request) {
   const { messages } = await req.json();
-  console.log(messages);
 
   const result = streamText({
     model: openai("gpt-5-mini"),

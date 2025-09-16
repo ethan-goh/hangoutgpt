@@ -78,7 +78,6 @@ const Chat = () => {
                 seen.current.add(key);
 
                 const fc = part.output as FeatureCollection;
-                console.log('[chat] nom_search output → features:', fc.features?.length ?? 0);
 
                 
                 emitNomSearch(fc);
@@ -211,9 +210,9 @@ const Chat = () => {
 
 																			const names = (fc.features ?? [])
 																				.map((f: any) =>
-																					f?.properties?.short_name ??
 																					f?.properties?.display_name ??
-																					f?.properties?.name
+																					f?.properties?.name ??
+																					f?.properties?.short_name
 																				)
 																				
 																				.filter((x): x is string => typeof x === 'string' && x.trim().length > 0);

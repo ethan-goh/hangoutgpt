@@ -166,6 +166,7 @@ async function nominatimSearch(params: NominatimParams): Promise<any[]> {
   });
   if (!res.ok) return [];
   const json = await res.json();
+  // console.log(json);
   return Array.isArray(json) ? json : [];
 }
 
